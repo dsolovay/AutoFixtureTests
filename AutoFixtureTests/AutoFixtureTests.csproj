@@ -69,7 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoFixtureTests.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="SomeClass.cs" />
+    <Compile Include="IntBuilder.cs" />
+    <Compile Include="MyCustomization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
