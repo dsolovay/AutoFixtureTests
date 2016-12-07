@@ -13,7 +13,7 @@ namespace AutoFixtureTests
     public void Customize(IFixture fixture)
     {
       var intBuilder = new IntBuilder();
-      fixture.Customize<int>(composer => { return intBuilder; }); 
+      fixture.Customizations.Add(intBuilder); 
       fixture.Inject("hello");
     }
 

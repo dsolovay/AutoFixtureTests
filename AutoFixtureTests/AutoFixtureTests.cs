@@ -48,7 +48,7 @@ namespace AutoFixtureTests
     public void CustomizeInts()
     {
       ISpecimenBuilder builder = new IntBuilder();
-      fixture.Customize<int>(composer => { return builder; } );
+      fixture.Customizations.Add(builder);
       fixture.Create<int>().Should().Be(10);
       fixture.Create<int>().Should().Be(9);
       SomeClass s = fixture.Create<SomeClass>();
