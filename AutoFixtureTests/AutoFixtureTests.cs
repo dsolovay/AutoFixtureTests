@@ -43,7 +43,7 @@ namespace AutoFixtureTests
             SampleClass1 s = fixture.Create<SampleClass1>();
             s.SomeProperty.Should().StartWith("SomeProperty");
             s.SomeEnumeration.Count().Should().Be(3);
-            s.SampleStringField.Should().StartWith("name", "uses constructor property name");
+            s.SampleStringField.Should().StartWith("sampleStringField", "uses constructor property name");
         }
 
         [Fact]
@@ -77,7 +77,7 @@ namespace AutoFixtureTests
 
             IFixture fixture = new Fixture();
             ISpecimenBuilder thirdPartyCustomization = new ThirdPartyCustomization();
-            fixture.Customizations.Add(thirdPartyCustomization);
+           // fixture.Customizations.Add(thirdPartyCustomization);
             ISpecimenBuilder localCustomization = new LocalCustomization();
             fixture.Customizations.Add(localCustomization);
 
@@ -99,11 +99,10 @@ namespace AutoFixtureTests
     {
         public object Create(object request, ISpecimenContext context)
         {
-            var t = request as Type;
-            if (t != null && typeof(Foo).Equals(t))
+            if (typeof(Foo).Equals(request))
             {
-                var foo = context.Resolve(typeof(Foo));
-                foo.StringProperty1 = "k";
+                var foo = new Foo();
+                foo.StringProperty1 = "inner";
                 return foo;
 
             }

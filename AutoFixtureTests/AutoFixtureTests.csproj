@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoFixtureTests.cs" />
+    <Compile Include="BuilderPattern.cs" />
+    <Compile Include="FreezeTests.cs" />
     <Compile Include="SampleClass1.cs" />
     <Compile Include="IntBuilder.cs" />
     <Compile Include="MyCustomization.cs" />
