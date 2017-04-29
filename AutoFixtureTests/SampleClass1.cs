@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace AutoFixtureTests
 {
-  public class SomeClass
+  public class SampleClass1
   {
-    public string Name { get; private set; }
+    public string SampleStringField { get; private set; }
 
     // AutoFixture can handle constructor properties.
-    public SomeClass(string name)
+    public SampleClass1(string sampleStringField)
     {
-      Name = name;
+      SampleStringField = sampleStringField;
     }
 
     public string SomeProperty { get; set; }
